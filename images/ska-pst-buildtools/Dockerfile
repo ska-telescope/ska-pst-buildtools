@@ -115,8 +115,8 @@ RUN cmake -DgRPC_INSTALL=ON -DgRPC_PROTOBUF_PROVIDER=package  \
 ARG PSRDADA=psrdada-code
 WORKDIR /mnt/${PSRDADA}-build
 
-# Compile PSRDADA
-RUN cmake /mnt/ska-pst-buildtools/resources/${PSRDADA} -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF \
+# Compile PSRDADA without IBVERBS and RDMACM
+RUN cmake /mnt/ska-pst-buildtools/resources/${PSRDADA} -DCMAKE_DISABLE_FIND_PACKAGE_rdmacm=TRUE -DCMAKE_DISABLE_FIND_PACKAGE_ibverbs=TRUE -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF \
     && make -j$(nproc) \
     && make install \
     && cp $(pwd)/Management/psrdada.pc ${LD_LIBRARY_PATH}/pkgconfig/
