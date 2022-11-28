@@ -16,7 +16,8 @@ trigger-ska-pst-smrb:
     variables: false
   variables:
     OCI_SKIP_PUSH: "true"
-    PST_OCI_REGISTRY: registry.gitlab.com/ska-telescope/pst/ska-pst-common
+    PST_OCI_REGISTRY: registry.gitlab.com/ska-telescope/pst/ska-pst-buildtools
+    PST_OCI_COMMON_BUILDER: ska-pst-buildtools
     PST_OCI_COMMON_TAG: $PST_OCI_COMMON_TAG
   trigger:
     project: ska-telescope/pst/ska-pst-smrb
