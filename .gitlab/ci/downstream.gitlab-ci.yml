@@ -22,6 +22,7 @@ trigger-ska-pst-smrb:
   trigger:
     project: ska-telescope/pst/ska-pst-smrb
     branch: $CI_COMMIT_BRANCH
+    strategy: depend
 
 
 trigger-ska-pst-recv:
