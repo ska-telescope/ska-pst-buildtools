@@ -34,6 +34,9 @@ stages:
 
 dynamic_vars:
   stage: build
+  needs: ["oci-image-build"]
+  variables:
+    GIT_SUBMODULE_STRATEGY: normal
   script:
     - echo "PST_OCI_BUILDTOOLS_TAG=$(grep -m 1 -o '[0-9].*' .release)-dev.c${CI_COMMIT_SHORT_SHA}" > build.env
     - echo "PST_OCI_BUILDTOOLS_RELEASE=$(grep -m 1 -o '[0-9].*' .release)" > build.env
