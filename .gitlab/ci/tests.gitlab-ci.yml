@@ -7,7 +7,9 @@ test_dada:
     PST_OCI_BUILDTOOLS_IMAGE: ska-pst-buildtools
     PST_OCI_BUILDTOOLS_TAG: $PST_OCI_BUILDTOOLS_TAG
   stage: test
-  needs: ["dynamic_vars"]
+  needs:
+    - dynamic_vars
+    - oci-image-build
   image: "$PST_OCI_BUILDTOOLS_REGISTRY/$PST_OCI_BUILDTOOLS_IMAGE:$PST_OCI_BUILDTOOLS_TAG"
   script:
     - dada_db
