@@ -20,6 +20,7 @@ trigger-merge-ska-pst-common:
     PST_OCI_BUILDTOOLS_TAG: $PST_OCI_BUILDTOOLS_TAG
   trigger:
     project: ska-telescope/pst/ska-pst-common
+  when: manual
 
 trigger-merge-ska-pst-smrb:
   extends: .downstream_common_config
@@ -29,6 +30,7 @@ trigger-merge-ska-pst-smrb:
     - trigger-merge-ska-pst-common
   trigger:
     project: ska-telescope/pst/ska-pst-smrb
+  when: manual
 
 trigger-merge-ska-pst-recv:
   extends: .downstream_common_config
@@ -38,6 +40,7 @@ trigger-merge-ska-pst-recv:
     - trigger-merge-ska-pst-smrb
   trigger:
     project: ska-telescope/pst/ska-pst-recv
+  when: manual
 
 trigger-merge-ska-pst-dsp:
   extends: .downstream_common_config
@@ -59,4 +62,5 @@ trigger-merge-ska-pst-integration:
     - trigger-merge-ska-pst-dsp
   trigger:
     project: ska-telescope/pst/ska-pst-integration
+  when: manual
   when: manual

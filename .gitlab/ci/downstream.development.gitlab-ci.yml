@@ -12,6 +12,7 @@
     OCI_SKIP_PUSH: "true"
   trigger:
     strategy: depend
+  when: manual
 
 trigger-development-ska-pst-common:
   extends: .downstream_common_config
@@ -20,6 +21,7 @@ trigger-development-ska-pst-common:
     PST_OCI_BUILDTOOLS_TAG: $PST_OCI_BUILDTOOLS_TAG
   trigger:
     project: ska-telescope/pst/ska-pst-common
+  when: manual
 
 trigger-development-ska-pst-smrb:
   extends: .downstream_common_config
@@ -29,6 +31,7 @@ trigger-development-ska-pst-smrb:
     - trigger-development-ska-pst-common
   trigger:
     project: ska-telescope/pst/ska-pst-smrb
+  when: manual
 
 trigger-development-ska-pst-recv:
   extends: .downstream_common_config
@@ -38,6 +41,7 @@ trigger-development-ska-pst-recv:
     - trigger-development-ska-pst-smrb
   trigger:
     project: ska-telescope/pst/ska-pst-recv
+  when: manual
 
 trigger-development-ska-pst-dsp:
   extends: .downstream_common_config
@@ -47,6 +51,7 @@ trigger-development-ska-pst-dsp:
     - trigger-development-ska-pst-smrb
   trigger:
     project: ska-telescope/pst/ska-pst-dsp
+  when: manual
 
 trigger-development-ska-pst-integration:
   extends: .downstream_common_config
