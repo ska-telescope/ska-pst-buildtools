@@ -132,6 +132,9 @@ RUN curl -L -O ${SPDLOG_RELEASE_URL}/${SPDLOG_RELEASE_FILE} \
     && tar -xvf ${SPDLOG_RELEASE_FILE} \
     && stat ${SPDLOG_FILE_FOLDER}
 
+WORKDIR /mnt/${SPDLOG}/${SPDLOG_FILE_FOLDER}
+COPY ./src/spdlog/include/tweakme.h ./include/spdlog/tweakme.h
+
 WORKDIR /mnt/${SPDLOG}-build
 RUN cmake /mnt/${SPDLOG}/${SPDLOG_FILE_FOLDER} \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
