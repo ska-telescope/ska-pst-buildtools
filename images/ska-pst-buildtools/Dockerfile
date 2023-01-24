@@ -138,6 +138,7 @@ COPY ./src/spdlog/include/tweakme.h ./include/spdlog/tweakme.h
 WORKDIR /mnt/${SPDLOG}-build
 RUN cmake /mnt/${SPDLOG}/${SPDLOG_FILE_FOLDER} \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DCMAKE_POSITION_INDEPENDENT_CODE=on \
     && make -j$(nproc) \
     && make install
 
