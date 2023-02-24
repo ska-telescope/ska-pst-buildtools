@@ -16,7 +16,7 @@ ibverbs-providers
 iwyu
 jq
 libbsd0
-libclang1-10
+libclang1
 libedit2
 libglew-dev
 libglm-dev
@@ -25,9 +25,10 @@ libhwloc-dev
 libibverbs-dev
 libibverbs1
 libimlib2-dev
-libllvm10
-libmlx4-1
-libmlx5-1
+libllvm15
+ibverbs-providers
+libibverbs-dev
+libibverbs1
 libpng-dev
 librdmacm-dev
 librdmacm1

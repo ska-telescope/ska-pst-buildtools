@@ -82,3 +82,6 @@ protobuf-docs:
 docs-pre-build: protobuf-docs
 
 .PHONY: protobuf-docs
+
+DEV_IMAGE=library/ubuntu
+DEV_TAG=22.04

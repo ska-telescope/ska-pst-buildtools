@@ -1,4 +1,4 @@
-FROM library/ubuntu:20.04 as base
+FROM library/ubuntu:22.04 as base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LD_LIBRARY_PATH=/usr/local/lib/
@@ -162,4 +162,4 @@ RUN cmake /mnt/${GOOGLETEST}/${GOOGLETEST_FILE_FOLDER} \
     && make install
 
 # Remove cached pyyaml info file
-RUN rm /usr/lib/python3/dist-packages/PyYAML-5.3.1.egg-info
+RUN rm -rf /usr/lib/python3/dist-packages/PyYAML.*
