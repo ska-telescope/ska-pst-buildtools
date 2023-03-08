@@ -16,26 +16,17 @@
 
 trigger-release-ska-pst-common:
   extends: .downstream_common_config
-  variables:
-    PST_OCI_BUILDTOOLS_REGISTRY: registry.gitlab.com/ska-telescope/pst/ska-pst-buildtools
-    PST_OCI_BUILDTOOLS_TAG: $PST_OCI_BUILDTOOLS_RELEASE
   trigger:
     project: ska-telescope/pst/ska-pst-common
   rules:
     - if: ($CI_COMMIT_BRANCH =~ /rel.*/) && ($CI_PIPELINE_SOURCE != "pipeline")
-  when: manual
-
-trigger-release-ska-pst-common:
-  extends: .downstream_common_config
-  needs:
-    - "oci-image-publish"
-  variables:
-    PST_OCI_BUILDTOOLS_REGISTRY: $SKA_RELEASE_REGISTRY
-    PST_OCI_BUILDTOOLS_TAG: $PST_OCI_BUILDTOOLS_RELEASE
-  trigger:
-    project: ska-telescope/pst/ska-pst-common
-  rules:
+      variables:
+        PST_OCI_BUILDTOOLS_REGISTRY: registry.gitlab.com/ska-telescope/pst/ska-pst-buildtools
+        PST_OCI_BUILDTOOLS_TAG: $PST_OCI_BUILDTOOLS_RELEASE
     - if: $CI_COMMIT_TAG
+      variables:
+        PST_OCI_BUILDTOOLS_REGISTRY: $SKA_RELEASE_REGISTRY
+        PST_OCI_BUILDTOOLS_TAG: $PST_OCI_BUILDTOOLS_RELEASE
   when: manual
 
 trigger-release-ska-pst-smrb:
