@@ -52,3 +52,7 @@ rdmacm-utils
 librdmacm1
 rdma-core
 net-tools
+perftest
+iputils-ping
+netcat
+iperf3
