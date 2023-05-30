@@ -44,3 +44,11 @@ python3-pybind11
 software-properties-common
 valgrind
 xsltproc
+infiniband-diags
+ibverbs-utils
+libvma
+libvma-dev
+rdmacm-utils
+librdmacm1
+rdma-core
+net-tools
