@@ -10,6 +10,9 @@ include .pst/base.mk
 
 # include your own private variables for custom deployment configuration
 -include PrivateRules.mak
+PROJECT=ska-pst-build-tools
+DEV_IMAGE=ubuntu
+DEV_TAG=22.04
 
 NPROC=`nproc`
 OCI_IMAGE_BUILD_CONTEXT=$(PWD)

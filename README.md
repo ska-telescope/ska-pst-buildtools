@@ -2,7 +2,7 @@
 
 This project allows centralised management of package dependencies required to be propagated against downstream SKA Pulsar Timing components.
 
-The primary artefact produced by this repository are oci images published to the centralised artefact repostory. At this time of writing, the base oci image used is `ubuntu:20.04` due to the future compatibility requirement against [NVIDIA's supported linux distributions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#linux-distributions).
+The primary artefact produced by this repository are oci images published to the centralised artefact repostory. At this time of writing, the base oci image used is `ubuntu:22.04` due to the future compatibility requirement against [NVIDIA's supported linux distributions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#linux-distributions).
 
 ## Build Instructions
 
