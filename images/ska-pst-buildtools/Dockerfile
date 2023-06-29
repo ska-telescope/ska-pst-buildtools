@@ -163,3 +163,7 @@ RUN cmake /mnt/${GOOGLETEST}/${GOOGLETEST_FILE_FOLDER} \
 
 # Remove cached pyyaml info file
 RUN rm -rf /usr/lib/python3/dist-packages/PyYAML-5.4.1.egg-info/
+
+# Install Poetry
+RUN curl -sSL https://install.python-poetry.org | python3 -
+ENV PATH="${PATH}:/root/.local/bin/"
